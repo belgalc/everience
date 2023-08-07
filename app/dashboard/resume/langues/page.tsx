@@ -24,6 +24,7 @@ const UserLanguages = () => {
       return [
         {
           name: "",
+          level: "",
         },
       ];
     }
@@ -41,10 +42,30 @@ const UserLanguages = () => {
   }, []);
 
   const handleLanguageAdd = () => {
-    setLanguages((prevLanguages) => [...prevLanguages, { name: "" }]);
+    setLanguages((prevLanguages) => [
+      ...prevLanguages,
+      { name: "", level: "" },
+    ]);
   };
   const handleLanguagesInputChange = (
     e: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
+    const { name, value } = e.target;
+    setLanguages((prevLanguages) =>
+      prevLanguages.map((language, i) => {
+        if (i === index) {
+          return {
+            ...language,
+            [name]: value,
+          };
+        }
+        return language;
+      })
+    );
+  };
+  const handleLanguagesSelectChange = (
+    e: React.ChangeEvent<HTMLSelectElement>,
     index: number
   ) => {
     const { name, value } = e.target;
@@ -103,7 +124,7 @@ const UserLanguages = () => {
       <h1 className="font-bold text-5xl mb-5">Langues</h1>
       <form
         onSubmit={handleFormSubmit}
-        className="flex flex-col items-center gap-5 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-20 w-2/5 transition duration-300"
+        className="flex flex-col items-center  bg-white shadow-md rounded px-8 pt-6 pb-8 mb-20 w-2/5 transition duration-300"
       >
         <Link href="/dashboard/resume">
           <div
@@ -117,9 +138,9 @@ const UserLanguages = () => {
           <div
             key={index}
             onSubmit={handleFormSubmit}
-            className="flex flex-col items-center gap-5 transition duration-300 mt-9 w-full"
+            className="flex flex-col items-center gap-2 transition duration-300 mt-9 w-full"
           >
-            <div className="w-full flex flex-col gap-2">
+            <div className="w-full flex flex-col">
               <div className="flex flex-row items-center justify-between gap-5">
                 <input
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -131,6 +152,20 @@ const UserLanguages = () => {
                   onChange={(e) => handleLanguagesInputChange(e, index)}
                   required
                 />
+                <select
+                  value={language.level}
+                  name="level"
+                  onChange={(e) => handleLanguagesSelectChange(e, index)}
+                  required
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline cursor-pointer"
+                >
+                  <option value="" disabled hidden>
+                    Niveau
+                  </option>
+                  <option value="débutant">Débutant</option>
+                  <option value="intermédiaire">Intermédiaire</option>
+                  <option value="expert">Expert</option>
+                </select>
                 <div
                   onClick={() => handleLanguagesRemove(index)}
                   className="cursor-pointer hover:opacity-70 transition duration-300"
@@ -143,11 +178,11 @@ const UserLanguages = () => {
         ))}
         <div
           onClick={handleLanguageAdd}
-          className=" font-bold text-blue-500 hover:text-blue-700 duration-300 cursor-pointer mr-80 border-2 border-slate-200 rounded-md p-1 w-28 text-center align-middle"
+          className=" font-bold text-blue-500 mt-5 hover:text-blue-700 duration-300 cursor-pointer mr-80 border-2 border-slate-200 rounded-md p-1 w-28 text-center align-middle"
         >
           <span className="text-xl">+</span> Ajouter
         </div>
-        <div className="flex gap-5">
+        <div className="flex gap-5 mt-5">
           <button
             type="submit"
             className="max-w-fit bg-blue-500 hover:bg-blue-700 duration-300 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

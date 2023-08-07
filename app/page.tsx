@@ -1,10 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import Service from "./components/Service";
-import { Services } from "./utils/services";
-
+import { useQuery } from "@tanstack/react-query";
+import { JobType } from "@/app/types/Jobs";
+import dynamic from "next/dynamic";
+import axios from "axios";
+const DynamicJob = dynamic(() => import("@/app/components/Job"));
 export default function Home() {
+  const getJobs = async () => {
+    const res = await axios.get("/api/jobs/getJobs");
+    return res.data;
+  };
+
+  const { data, error, isLoading } = useQuery({
+    queryFn: getJobs,
+    queryKey: ["jobs"],
+  });
   return (
     <div className="w-full">
       <video
@@ -50,12 +61,12 @@ export default function Home() {
       </section>
       <section className="h-screen text-xl font-light relative ">
         <div className="w-full absolute h-screen flex flex-col items-center justify-start gap-44 ">
-          <div className="font-bold text-6xl border-b-4 border-red-400 mt-16 tracking-wider">
-            Nos Services
+          <div className="font-bold text-6xl border-b-4 border-red-400 mt-16">
+            Dernières offres d'emploi
           </div>
-          <section className="grid grid-cols-4 gap-16 ">
-            {Services.map((service) => (
-              <Service titre={service.title} key={service.id} id={service.id} />
+          <section className="grid grid-cols-3 gap-16 ">
+            {data?.map((job: JobType) => (
+              <DynamicJob key={job.id} id={job.id} title={job.title} />
             ))}
           </section>
         </div>

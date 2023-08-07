@@ -8,8 +8,14 @@ import { UserDropdown } from "../utils/userDropdown";
 import Link from "next/link";
 import { useState } from "react";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import { useRouter } from "next/navigation";
 
 const Logout = () => {
+  const router = useRouter();
+  const logoutButton = () => {
+    signOut();
+    router.push("/");
+  };
   const [toggle, setToggle] = useState(false);
   return (
     <div className="flex justify-center gap-10 mr-5 relative">
@@ -44,7 +50,7 @@ const Logout = () => {
             </Link>
           ))}
           <button
-            onClick={() => signOut()}
+            onClick={logoutButton}
             className="  cursor-pointer block p-2 text-gray-800 hover:bg-gray-200 transition duration-300"
           >
             Se déconnecter

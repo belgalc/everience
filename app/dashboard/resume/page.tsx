@@ -5,7 +5,9 @@ import axios from "axios";
 import Link from "next/link";
 import "../../styles/globals.css";
 import dynamic from "next/dist/shared/lib/dynamic";
-
+const DynamicKeyboardBackspaceIcon = dynamic(
+  () => import("@mui/icons-material/KeyboardBackspace")
+);
 const DynamicLoading = dynamic(() => import("@/app/loading"));
 const DynamicEditIcon = dynamic(() => import("@mui/icons-material/Edit"));
 
@@ -23,6 +25,14 @@ const Dashboard = () => {
   return (
     <div className="flex items-center mt-9 gap-14 flex-col min-h-screen mb-10">
       <p className="font-bold text-5xl">Résumé</p>
+      <Link href="/dashboard">
+        <div
+          className="cursor-pointer transition duration-300 hover:opacity-70 ml-96 -mt-24 "
+          onClick={() => localStorage.clear()}
+        >
+          <DynamicKeyboardBackspaceIcon />
+        </div>
+      </Link>
       <section className="w-2/5 flex flex-col gap-4">
         <div className="flex items-center justify-between">
           <span className="font-bold text-xl">Education</span>
@@ -145,7 +155,16 @@ const Dashboard = () => {
                 key={langue.id}
                 className="flex flex-col p-5 rounded-md border hover:bg-opacity-100 bg-opacity-60 bg-neutral-300 w-full gap-2 transition duration-300"
               >
-                <span>{langue.name}</span>
+                <div className="flex gap-1">
+                  {" "}
+                  <span className="first-letter:uppercase">
+                    {langue.name} -
+                  </span>
+                  <span className="first-letter:uppercase">
+                    {" "}
+                    {langue.level}
+                  </span>
+                </div>
               </div>
             ))
           )}

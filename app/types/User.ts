@@ -35,5 +35,6 @@ export type User = {
   languages?: {
     id?: string;
     name: string;
+    level: string;
   }[];
 };

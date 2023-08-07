@@ -41,12 +41,18 @@ const Emplois = () => {
           />
         </div>
       </section>
-      <p className=" my-10 font-extrabold text-5xl">Liste des emplois</p>
-      <div className="grid grid-cols-3 gap-10 px-10 ">
-        {data?.map((job: JobType) => (
-          <DynamicJob key={job.id} id={job.id} title={job.title} />
-        ))}
-      </div>
+      <section className="h-64 text-xl font-light relative ">
+        <div className="w-full absolute flex flex-col items-center justify-start gap-32 ">
+          <div className="font-bold text-6xl border-b-4 border-red-400 ">
+            Nos emplois
+          </div>
+          <section className="grid grid-cols-3 gap-16 ">
+            {data?.map((job: JobType) => (
+              <DynamicJob key={job.id} id={job.id} title={job.title} />
+            ))}
+          </section>
+        </div>
+      </section>
     </div>
   );
 };
