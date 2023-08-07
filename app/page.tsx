@@ -12,7 +12,7 @@ export default function Home() {
         muted
         autoPlay
         loop
-        src="https://drive.google.com/file/d/1jCtz0S-D7dbbOaN8bxl20qRLGyfUWHx5/view?usp=drive_link"
+        src="/Script1.mp4"
       />
       <div className=" w-full h-screen bg-black bg-opacity-60 absolute top-0"></div>
 

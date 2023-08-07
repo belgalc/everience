@@ -24,7 +24,7 @@ const userJobs = () => {
   if (error) return error;
   if (isLoading) return <DynamicLoading />;
   return (
-    <div className="text-center">
+    <div className="text-center min-h-screen">
       <p className=" my-10 font-extrabold text-5xl">Mes emplois</p>
       {!data?.length ? (
         <div className="mt-6 font-light text-lg">No applied jobs</div>
