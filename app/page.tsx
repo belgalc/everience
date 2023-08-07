@@ -5,6 +5,8 @@ import { useQuery } from "@tanstack/react-query";
 import { JobType } from "@/app/types/Jobs";
 import dynamic from "next/dynamic";
 import axios from "axios";
+
+const DynamicLoading = dynamic(() => import("./loading"));
 const DynamicJob = dynamic(() => import("@/app/components/Job"));
 export default function Home() {
   const getJobs = async () => {
@@ -16,6 +18,8 @@ export default function Home() {
     queryFn: getJobs,
     queryKey: ["jobs"],
   });
+  if (error) return error;
+  if (isLoading) return <DynamicLoading />;
   return (
     <div className="w-full">
       <video
