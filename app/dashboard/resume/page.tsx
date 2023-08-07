@@ -122,7 +122,7 @@ const Dashboard = () => {
             </div>
           </Link>
         </div>
-        <section className="flex gap-5">
+        <section className="flex flex-col gap-5">
           {!data?.skills?.length ? (
             <div>Ajouter des compétences</div>
           ) : (
@@ -146,7 +146,7 @@ const Dashboard = () => {
             </div>
           </Link>
         </div>
-        <section className="flex gap-5">
+        <section className="flex flex-col gap-5">
           {!data?.languages?.length ? (
             <div>Ajouter des langues</div>
           ) : (
