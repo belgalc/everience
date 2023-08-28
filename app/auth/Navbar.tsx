@@ -16,17 +16,17 @@ const Navbar: React.FC<NavbarProps> = ({ session }) => {
   const scrollY = getScrollY();
   const display = () => {
     if (pathname === "/") {
-      return scrollY >= 90 ? "bg-slate-500 h-16" : "h-24";
+      return scrollY >= 90 ? "bg-slate-500 h-16" : " bg-white h-16";
     } else return "bg-slate-500 h-16";
   };
 
   return (
     <header
-      className={`flex justify-between items-center px-24 w-full  ${display()} sticky top-0 z-50 transition duration-400 `}
+      className={`flex justify-between items-center px-24 w-full  bg-white h-16 sticky top-0 z-50 transition duration-400 `}
     >
       <Link href="https://everience.com" target="_blank">
         <Image
-          src="/colored-logo-everience-white.png"
+          src="/cropped-Everience-logo-final.png"
           alt="everience"
           width="180"
           height="60"
@@ -35,13 +35,16 @@ const Navbar: React.FC<NavbarProps> = ({ session }) => {
           style={{ width: "70%", height: "auto" }}
         />
       </Link>
-      <nav className="mr-96 ">
+      <nav className="mr-6">
         <ul className="flex flex-row gap-12">
-          <li className=" border-transparent text-white hover:text-blue-400 transition duration-300">
+          <li className=" border-transparent hover:text-blue-400 text-gray-700  transition duration-300">
             <Link href="/">Accueil</Link>
           </li>
-          <li className="border-transparent text-white hover:text-blue-400 transition duration-300">
+          <li className="border-transparent hover:text-blue-400  text-gray-700 transition duration-300">
             <Link href="emplois">Emplois</Link>
+          </li>
+          <li className="border-transparent hover:text-blue-400  text-gray-700 transition duration-300">
+            <Link href="emplois">Formations</Link>
           </li>
         </ul>
       </nav>
