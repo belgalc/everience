@@ -61,7 +61,7 @@ const UserInfos = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.4 } }}
       exit={{ opacity: 0, transition: { duration: 0.4 } }}
-      className="flex flex-col items-center mt-20 "
+      className="flex flex-col items-center mt-20 h-screen"
     >
       <h1 className="font-bold text-5xl mb-5">Coordonnées</h1>
       <form
