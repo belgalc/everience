@@ -48,7 +48,7 @@ const Logout = () => {
           ))}
           <button
             onClick={logoutButton}
-            className="  cursor-pointer block p-2 text-gray-800 hover:bg-gray-200 transition duration-300"
+            className="  cursor-pointer block pl-2 py-2 text-gray-800 hover:bg-gray-200 transition duration-300"
           >
             Se déconnecter
           </button>
