@@ -60,7 +60,7 @@ export default function Home() {
       </section>
       <section className="h-screen text-xl font-light relative  bg-gradient-to-br from-pink-500 to-pink-200 ">
         <div className="w-full absolute h-screen  pl-6">
-          <p className="w-2/5 leading-9 absolute top-1/2 right-24 font-medium p-5 rounded-md z-50 bg-white -translate-y-1/2 text-gray-700 flex flex-col gap-8 text-xl">
+          <p className="w-2/5 leading-9 absolute top-1/2 right-24 font-medium p-5 rounded-md z-40 bg-white -translate-y-1/2 text-gray-700 flex flex-col gap-8 text-xl">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab amet
             expedita dolorem nostrum, deleniti suscipit. Obcaecati cumque minima
             id consequuntur itaque tempora a! Nulla cum ut harum expedita saepe
@@ -109,7 +109,7 @@ export default function Home() {
               height="600"
             />
           </div>
-          <p className="w-2/5 leading-9 absolute top-1/2 left-24 font-medium p-5 rounded-md z-50 bg-white -translate-y-1/2 text-gray-700 flex flex-col gap-8 text-xl">
+          <p className="w-2/5 leading-9 absolute top-1/2 left-24 font-medium p-5 rounded-md z-40 bg-white -translate-y-1/2 text-gray-700 flex flex-col gap-8 text-xl">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab amet
             expedita dolorem nostrum, deleniti suscipit. Obcaecati cumque minima
             id consequuntur itaque tempora a! Nulla cum ut harum expedita saepe
