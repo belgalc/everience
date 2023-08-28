@@ -42,8 +42,8 @@ const Emplois = () => {
         </div>
       </section>
       <section className="h-64 text-xl font-light relative ">
-        <div className="w-full absolute flex flex-col items-center justify-start gap-32 ">
-          <div className="font-bold text-6xl border-b-4 border-red-400 ">
+        <div className="w-full absolute flex flex-col items-center justify-start gap-16 ">
+          <div className="font-bold text-6xl border-b-4 border-blue-500 ">
             Nos emplois
           </div>
           <section className="grid grid-cols-3 gap-16 ">

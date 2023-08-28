@@ -48,31 +48,39 @@ export default function Home() {
             repellendus placeat culpa nobis error architecto, optio, ea
             laboriosam esse voluptatibus minus quas ratione.
           </p>
+          <div>
+            <Image
+              src="/undraw_career_progress_ivdb.png"
+              width="400"
+              height="400"
+              alt=""
+            />
+          </div>
         </div>
       </section>
       <section className="h-screen text-xl font-light relative  bg-gradient-to-br from-pink-500 to-pink-200 ">
-        <div className="w-full absolute h-screen flex items-center justify-around pl-6">
-          <p className="w-2/5 leading-loose text-white flex flex-col gap-8 text-lg">
-            <span className="font-bold text-4xl ">
-              Lorem ipsum dolor sit amet
-            </span>{" "}
+        <div className="w-full absolute h-screen  pl-6">
+          <p className="w-2/5 leading-9 absolute top-1/2 right-24 font-medium p-5 rounded-md z-50 bg-white -translate-y-1/2 text-gray-700 flex flex-col gap-8 text-xl">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab amet
             expedita dolorem nostrum, deleniti suscipit. Obcaecati cumque minima
             id consequuntur itaque tempora a! Nulla cum ut harum expedita saepe
-            magni?
+            magni? Obcaecati cumque minima id consequuntur itaque tempora a!
+            Nulla cum ut harum expedita saepe magni?
           </p>
-          <Image
-            src="/MADI0071.JPG"
-            alt=""
-            loading="lazy"
-            width="600"
-            height="1000"
-          />
+          <div className="absolute top-1/2 left-24 -translate-y-1/2">
+            <Image
+              src="/MADI0071.JPG"
+              alt=""
+              loading="lazy"
+              width="700"
+              height="600"
+            />
+          </div>
         </div>
       </section>
       <section className="h-screen text-xl font-light relative ">
-        <div className="w-full absolute h-screen flex flex-col items-center justify-start gap-44 ">
-          <div className="font-bold text-gray-700 text-6xl border-b-4 border-amber-400 mt-16">
+        <div className="w-full absolute h-screen flex flex-col items-center justify-start gap-32">
+          <div className="font-bold text-gray-700 text-6xl border-b-4 border-blue-500 mt-16">
             Dernières offres d'emploi
           </div>
           <section className="grid grid-cols-3 gap-16 ">
@@ -81,24 +89,32 @@ export default function Home() {
             ))}
           </section>
         </div>
+        <div className="absolute bottom-4 right-4">
+          <Image
+            src="/undraw_Work_from_anywhere_re_s2i6.png"
+            width="320"
+            height="120"
+            alt=""
+          />
+        </div>
       </section>
       <section className="h-screen text-xl font-light relative bg-gradient-to-tl from-amber-400 to bg-amber-100">
         <div className="w-full absolute h-screen flex items-center justify-around ">
-          <Image
-            src="/_DSC0030-2.jpg"
-            alt=""
-            loading="lazy"
-            width="600"
-            height="600"
-          />
-          <p className="w-2/5 leading-loose text-white flex flex-col gap-8 text-lg">
-            <span className="font-bold text-4xl ">
-              Lorem ipsum dolor sit amet
-            </span>{" "}
+          <div className="absolute top-1/2 right-24 -translate-y-1/2">
+            <Image
+              src="/_DSC0030-2.jpg"
+              alt=""
+              loading="lazy"
+              width="700"
+              height="600"
+            />
+          </div>
+          <p className="w-2/5 leading-9 absolute top-1/2 left-24 font-medium p-5 rounded-md z-50 bg-white -translate-y-1/2 text-gray-700 flex flex-col gap-8 text-xl">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab amet
             expedita dolorem nostrum, deleniti suscipit. Obcaecati cumque minima
             id consequuntur itaque tempora a! Nulla cum ut harum expedita saepe
-            magni?
+            magni? Obcaecati cumque minima id consequuntur itaque tempora a!
+            Nulla cum ut harum expedita saepe magni?
           </p>
         </div>
       </section>
