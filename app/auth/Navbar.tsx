@@ -44,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ session }) => {
             <Link href="emplois">Emplois</Link>
           </li>
           <li className="border-transparent hover:text-blue-400  text-gray-700 transition duration-300">
-            <Link href="emplois">Formations</Link>
+            <Link href="">Formations</Link>
           </li>
         </ul>
       </nav>
